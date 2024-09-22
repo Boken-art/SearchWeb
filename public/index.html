@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    <div class="container">
+        <h1>A.S_SearchWeb</h1>
+        <form id="searchForm" class="form-inline justify-content-start">
+            <div class="form-group mb-2 flex-grow-1">
+                <input type="text" id="query" class="form-control rounded w-100" placeholder="Zadejte klíčová slova" required>
+            </div>
+            <button type="submit" class="btn custom-btn mb-2 rounded ml-2">
+                <i >Searching...</i> 
+            </button>
+        </form>
+
+        <div id="results" class="mt-4"></div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

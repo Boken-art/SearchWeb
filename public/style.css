@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #04426bf5;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.custom-btn {
+    background-color: #04426bf5; 
+    color: white; 
+}
+
+.custom-btn:hover {
+    background-color: #0a80cef5; 
+}
+
+.form-inline {
+    justify-content: flex-start; 
+}
+
+#results {
+    margin-top: 20px;
+}
+
+#results div {
+    border: 1px solid #000000e7;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #dbad6c;
+}
