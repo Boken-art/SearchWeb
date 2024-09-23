@@ -45,8 +45,8 @@ app.get('/search', async (req, res) => {
         return res.status(400).send({ error: 'Chybí dotaz.' });
     }
     // Now we create a URL for Google Custom Search. I use encodeURIComponent(query) to ensure that all characters are encoded correctly
-    const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX}&q=${encodeURIComponent(query)}`;
-
+    //Now in URL I have prametrs for starting from 1 to 10 result, becose i need oly google page 1.
+    const url = `https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CX}&q=${encodeURIComponent(query)}&num=10&start=1`;
     // I use try for catching error 500 = no results
     try {
 
@@ -55,10 +55,13 @@ app.get('/search', async (req, res) => {
         // Then I convert the answers from JSON to an object for later use
         const data = await response.json();
 
+        //I add fitlter rof ads
+        const noAdResults = data.items.filter(item => !item.pagemap?.cse_thumbnail && !item.pagemap?.product && !item.pagemap?.offer);
+
         
 
         // There I just extract the title, link, and snippet for my static script.js, which I later call in the HTML so that the user can see the results on the page 
-        const results = data.items.map(item => ({
+        const results = noAdResults.map(item => ({
             title: item.title,
             link: item.link,
             snippet: item.snippet
