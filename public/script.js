@@ -30,8 +30,9 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
                 // Create a div element that wraps the code in HTML.
                 resultsDiv.appendChild(resultElement);
             });
-            
+            document.getElementById('downloadLink').style.display = 'block';
         })
+        
         //Just catching some errors
         .catch(error => {
             console.error('Chyba při získávání výsledků:', error);
